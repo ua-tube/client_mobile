@@ -1,7 +1,7 @@
-import { useClientOnlyValue, useColorScheme } from '@/hooks'
 import { Image, Pressable, Text, View } from 'react-native'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
-import { Link, Tabs, SplashScreen, Stack } from 'expo-router'
+import { useClientOnlyValue } from '@/hooks'
+import { Link, Tabs } from 'expo-router'
 import Colors from '@/constants/Colors'
 import React from 'react'
 
@@ -9,29 +9,31 @@ function TabBarIcon(props: {
 	name: React.ComponentProps<typeof FontAwesome>['name']
 	color: string
 }) {
-	return <FontAwesome
-		size={28}
-		style={{ marginBottom: -3 }}
-		{...props}
-	/>
+	return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />
 }
 
 export default function TabLayout() {
-	const colorScheme = useColorScheme()
-
 	return (
 		<Tabs
 			screenOptions={{
-				tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+				tabBarActiveTintColor: Colors['light'].tint,
 				headerShown: useClientOnlyValue(false, true)
 			}}
 		>
 			<Tabs.Screen
-				name="index"
+				name='index'
 				options={{
 					title: 'Головна',
 					headerLeft: () => (
-						<View style={{ flexDirection: 'row', flex: 1, alignItems: 'center', marginLeft: 15, gap: 5 }}>
+						<View
+							style={{
+								flexDirection: 'row',
+								flex: 1,
+								alignItems: 'center',
+								marginLeft: 15,
+								gap: 5
+							}}
+						>
 							<Image
 								style={{
 									width: 30,
@@ -39,18 +41,24 @@ export default function TabLayout() {
 								}}
 								source={require('@/assets/images/logo.png')}
 							/>
-							<Text style={{ color: Colors[colorScheme ?? 'light'].text, fontWeight: 'bold', fontSize: 20 }}
-										children="UaTube" />
+							<Text
+								style={{
+									color: Colors['light'].text,
+									fontWeight: 'bold',
+									fontSize: 20
+								}}
+								children='UaTube'
+							/>
 						</View>
 					),
 					headerRight: () => (
-						<Link href="/modal" asChild>
+						<Link href='/modal' asChild>
 							<Pressable>
 								{({ pressed }) => (
 									<FontAwesome
-										name="search"
+										name='search'
 										size={25}
-										color={Colors[colorScheme ?? 'light'].text}
+										color={Colors['light'].text}
 										style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
 									/>
 								)}
@@ -58,21 +66,14 @@ export default function TabLayout() {
 						</Link>
 					),
 					headerTitle: '',
-					tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />
+					tabBarIcon: ({ color }) => <TabBarIcon name='home' color={color} />
 				}}
 			/>
 			<Tabs.Screen
-				name="video-create"
+				name='user'
 				options={{
-					title: 'Створити',
-					tabBarIcon: ({ color }) => <TabBarIcon name="plus" color={color} />
-				}}
-			/>
-			<Tabs.Screen
-				name="user"
-				options={{
-					title: 'Я',
-					tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />
+					title: 'Користувач',
+					tabBarIcon: ({ color }) => <TabBarIcon name='user' color={color} />
 				}}
 			/>
 		</Tabs>

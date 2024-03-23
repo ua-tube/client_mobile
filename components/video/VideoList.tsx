@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 	},
 	grid: {
 		paddingHorizontal: 20,
-		paddingTop: 16,
+		paddingTop: 16
 	}
 })
 

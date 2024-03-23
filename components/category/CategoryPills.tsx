@@ -1,12 +1,20 @@
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import {
+	ScrollView,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	View
+} from 'react-native'
 import React, { FC, useState } from 'react'
 
 interface ICategoryPillsProps {
-	categories: string[];
+	categories: string[]
 }
 
 const CategoryPills: FC<ICategoryPillsProps> = ({ categories }) => {
-	const [selectedCategory, setSelectedCategory] = useState<string>(categories[0])
+	const [selectedCategory, setSelectedCategory] = useState<string>(
+		categories[0]
+	)
 	return (
 		<View style={styles.container}>
 			<ScrollView
@@ -14,19 +22,18 @@ const CategoryPills: FC<ICategoryPillsProps> = ({ categories }) => {
 				showsHorizontalScrollIndicator={false}
 				contentContainerStyle={styles.contentContainer}
 				style={styles.scrollView}
-				children={
-					categories.map((category, index) => (
-						<TouchableOpacity
-							key={index}
-							onPress={() => setSelectedCategory(category)}
-							style={[
-								styles.button,
-								selectedCategory === category ? styles.selectedButton : {}
-							]}
-						>
-							<Text style={styles.buttonText}>{category}</Text>
-						</TouchableOpacity>
-					))}
+				children={categories.map((category, index) => (
+					<TouchableOpacity
+						key={index}
+						onPress={() => setSelectedCategory(category)}
+						style={[
+							styles.button,
+							selectedCategory === category ? styles.selectedButton : {}
+						]}
+					>
+						<Text style={styles.buttonText}>{category}</Text>
+					</TouchableOpacity>
+				))}
 			/>
 		</View>
 	)
@@ -35,7 +42,7 @@ const CategoryPills: FC<ICategoryPillsProps> = ({ categories }) => {
 const styles = StyleSheet.create({
 	container: {
 		backgroundColor: '#E5E5E5',
-		paddingVertical: 3,
+		paddingVertical: 4,
 		borderStyle: 'dashed'
 	},
 	contentContainer: {

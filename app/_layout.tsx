@@ -1,23 +1,22 @@
+import {
+	DarkTheme,
+	DefaultTheme,
+	ThemeProvider
+} from '@react-navigation/native'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
+import LoadingSpinner from '@/components/LoadingSpinner'
 import * as SplashScreen from 'expo-splash-screen'
 import { useColorScheme } from '@/hooks'
 import { useFonts } from 'expo-font'
 import { Stack } from 'expo-router'
 import { useEffect } from 'react'
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
-import LoadingSpinner from '@/components/LoadingSpinner'
 
-export {
-	ErrorBoundary
-} from 'expo-router'
+export { ErrorBoundary } from 'expo-router'
 
 export const unstable_settings = {
 	// Ensure that reloading on `/modal` keeps a back button present.
 	initialRouteName: '(tabs)'
 }
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
 	const [loaded, error] = useFonts({
@@ -35,7 +34,7 @@ export default function RootLayout() {
 	}, [loaded])
 
 	if (!loaded) {
-		return <LoadingSpinner color="red" />
+		return <LoadingSpinner color='red' />
 	}
 
 	return <RootLayoutNav />
@@ -47,7 +46,8 @@ function RootLayoutNav() {
 	return (
 		<ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
 			<Stack>
-				<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+				<Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+				<Stack.Screen name='modal' options={{ presentation: 'modal' }} />
 			</Stack>
 		</ThemeProvider>
 	)

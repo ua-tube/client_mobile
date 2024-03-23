@@ -1,7 +1,6 @@
 import CategoryPills from '@/components/category/CategoryPills'
 import VideosList from '@/components/video/VideoList'
-import { View } from '@/components/Themed'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { categories, videos } from '@/data'
 
 export default function TabOneScreen() {
