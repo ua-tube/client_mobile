@@ -1,3 +1,4 @@
+import React, { FC, useState } from 'react'
 import {
 	ScrollView,
 	StyleSheet,
@@ -5,7 +6,6 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
-import React, { FC, useState } from 'react'
 
 interface ICategoryPillsProps {
 	categories: string[]

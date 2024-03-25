@@ -1,5 +1,5 @@
-import CategoryPills from '@/components/category/CategoryPills'
-import VideosList from '@/components/video/VideoList'
+import CategoryPills from '@/components/CategoryPills'
+import VideosList from '@/components/VideoList'
 import { StyleSheet, View } from 'react-native'
 import { categories, videos } from '@/data'
 

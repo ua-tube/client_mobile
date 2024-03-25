@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { useLocalSearchParams } from 'expo-router'
-import Video from 'react-native-video'
+import { ResizeMode, Video } from 'expo-av'
 import { videos } from '@/data'
 import React from 'react'
 
@@ -12,9 +12,10 @@ const VideoPage: React.FC = () => {
 		<View style={styles.container}>
 			<View style={styles.videoContainer}>
 				<Video
-					source={{
-						uri: `http://185.154.14.126/api/videos/${video?.id}/720p.mp4`
-					}}
+					source={{ uri: `http://185.154.14.126/api/videos/${video?.id}/720p.mp4` }}
+					useNativeControls
+					resizeMode={ResizeMode.COVER}
+					isLooping
 					style={styles.videoPlayer}
 				/>
 			</View>

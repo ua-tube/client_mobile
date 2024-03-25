@@ -31,7 +31,6 @@ interface IVideo {
 	postedAt: string
 	duration: number
 	thumbnailUrl: string
-	videoUrl: string
 	limits?: boolean
 	visible?: 0 | 1 | 2
 }

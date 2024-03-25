@@ -1,3 +1,4 @@
-const formatNumbers = (v: number = 0, locale = 'uk') => Intl.NumberFormat(locale, { notation: 'compact' }).format(v)
+const formatNumbers = (v: number = 0, locale = 'en') =>
+	Intl.NumberFormat(locale, { notation: 'compact' }).format(v)
 
 export { formatNumbers }
