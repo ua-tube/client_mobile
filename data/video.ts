@@ -1,6 +1,5 @@
 import { IComment, IVideo, IChannel } from '@/interfaces'
 
-const videoSpeeds = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 3, 4]
 
 const qualities = ['144p', '240p', '360p', '480p', '720p', '1080p', '1440p', '2160p']
 
@@ -58,7 +57,6 @@ const defaultVideo: IVideo = {
 	commentsCount: 435435,
 	disLikesCount: 4242,
 	postedAt: '2023-09-29',
-	videoUrl: 'jghjg',
 	views: 4205345345,
 	qualities,
 	thumbnailUrl: '',
@@ -78,7 +76,7 @@ const defaultComments: IComment[] = [
 		message: 'Дуже цікаве відео! Дякую за те, що поділились.',
 		createdAt: '2024-02-03T22:49:00.000Z',
 		likesCount: 10,
-		chanel: {
+		channel: {
 			id: 'channel-1',
 			nickName: 'bodes',
 			name: 'Наука та Технології',
@@ -91,7 +89,7 @@ const defaultComments: IComment[] = [
 				message: 'Дуже цікаве відео! Можна поділитися з друзями?',
 				createdAt: '2024-02-03T22:49:00.000Z',
 				likesCount: 10,
-				chanel: {
+				channel: {
 					id: 'channel-1',
 					nickName: 'bodes',
 					name: 'Наука та Технології',
@@ -104,7 +102,7 @@ const defaultComments: IComment[] = [
 						message: 'Так',
 						createdAt: '2024-02-03T22:49:00.000Z',
 						likesCount: 10,
-						chanel: {
+						channel: {
 							id: 'channel-1',
 							nickName: 'bodes',
 							name: 'Наука та Технології',
@@ -119,7 +117,7 @@ const defaultComments: IComment[] = [
 				message: 'Дуже цікаве відео!',
 				createdAt: '2024-02-03T22:49:00.000Z',
 				likesCount: 10,
-				chanel: {
+				channel: {
 					id: 'channel-1',
 					nickName: 'bodes',
 					name: 'Наука та Технології',
@@ -135,7 +133,7 @@ const defaultComments: IComment[] = [
 		message: 'Чудовий канал! Завжди знаходжу тут багато корисної інформації.',
 		createdAt: '2024-02-03T22:50:00.000Z',
 		likesCount: 5,
-		chanel: {
+		channel: {
 			id: 'channel-2',
 			nickName: 'channel-2',
 			name: 'Кулінарія',
@@ -148,7 +146,7 @@ const defaultComments: IComment[] = [
 		message: 'Не згоден з автором відео. На мою думку, він помиляється.',
 		createdAt: '2024-02-03T22:51:00.000Z',
 		likesCount: 2,
-		chanel: {
+		channel: {
 			id: 'channel-3',
 			nickName: 'channel-3',
 			name: 'Подорожі',
@@ -161,7 +159,7 @@ const defaultComments: IComment[] = [
 		message: 'Дуже емоційне відео. Не очікував такого.',
 		createdAt: '2024-02-03T22:52:00.000Z',
 		likesCount: 3,
-		chanel: {
+		channel: {
 			id: 'channel-4',
 			nickName: 'channel-3',
 			name: 'Музика',
@@ -174,7 +172,7 @@ const defaultComments: IComment[] = [
 		message: 'Супер! ',
 		createdAt: '2024-02-03T22:53:00.000Z',
 		likesCount: 4,
-		chanel: {
+		channel: {
 			id: 'channel-5',
 			nickName: 'channel-3',
 			name: 'Спорт',
@@ -205,4 +203,4 @@ const defaultChannel: IChannel = {
 
 
 
-export { videoSpeeds, defaultVideo, defaultComments, defaultChannel, qualities }
+export {  defaultVideo, defaultComments, defaultChannel, qualities }

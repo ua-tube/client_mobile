@@ -1,11 +1,5 @@
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { FC, useState } from 'react'
-import {
-	ScrollView,
-	StyleSheet,
-	Text,
-	TouchableOpacity,
-	View
-} from 'react-native'
 
 interface ICategoryPillsProps {
 	categories: string[]
@@ -15,54 +9,49 @@ const CategoryPills: FC<ICategoryPillsProps> = ({ categories }) => {
 	const [selectedCategory, setSelectedCategory] = useState<string>(
 		categories[0]
 	)
+
 	return (
 		<View style={styles.container}>
 			<ScrollView
 				horizontal
 				showsHorizontalScrollIndicator={false}
 				contentContainerStyle={styles.contentContainer}
-				style={styles.scrollView}
-				children={categories.map((category, index) => (
+			>
+				{categories.map((category, index) => (
 					<TouchableOpacity
 						key={index}
 						onPress={() => setSelectedCategory(category)}
-						style={[
-							styles.button,
-							selectedCategory === category ? styles.selectedButton : {}
-						]}
+						style={[styles.button, selectedCategory === category && styles.selectedButton]}
 					>
 						<Text style={styles.buttonText}>{category}</Text>
 					</TouchableOpacity>
 				))}
-			/>
+			</ScrollView>
 		</View>
 	)
 }
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: '#E5E5E5',
+		backgroundColor: '#333',
 		paddingVertical: 4,
-		borderStyle: 'dashed'
 	},
 	contentContainer: {
-		paddingHorizontal: 16
-	},
-	scrollView: {
-		backgroundColor: '#FFFFFF'
+		paddingHorizontal: 16,
 	},
 	button: {
 		padding: 8,
 		marginRight: 8,
-		borderRadius: 10,
-		backgroundColor: '#CCCCCC'
+		borderRadius: 8,
+		backgroundColor: '#444',
 	},
 	selectedButton: {
-		backgroundColor: '#555555'
+		backgroundColor: '#555',
 	},
 	buttonText: {
-		color: '#FFFFFF'
-	}
+		color: '#fff',
+		fontWeight: 'bold',
+	},
 })
 
 export default CategoryPills

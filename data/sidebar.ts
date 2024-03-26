@@ -1,6 +1,6 @@
-import { musicVideos, videoEdits, videos } from '@/data/videos'
 import { IChannel, IPlaylist } from '@/interfaces'
 import { defaultChannel } from '@/data/video'
+import { musicVideos, videoEdits, videos } from '@/data/videos'
 
 const subscriptions: IChannel[] = [
 	{

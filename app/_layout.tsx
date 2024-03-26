@@ -1,12 +1,7 @@
-import {
-	DarkTheme,
-	DefaultTheme,
-	ThemeProvider
-} from '@react-navigation/native'
+import { ThemeProvider } from '@react-navigation/native'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import LoadingSpinner from '@/components/LoadingSpinner'
 import * as SplashScreen from 'expo-splash-screen'
-import { useColorScheme } from '@/hooks'
 import { useFonts } from 'expo-font'
 import { Stack } from 'expo-router'
 import { useEffect } from 'react'
@@ -24,7 +19,6 @@ export default function RootLayout() {
 		...FontAwesome.font
 	})
 
-	// Expo Router uses Error Boundaries to catch errors in the navigation tree.
 	useEffect(() => {
 		if (error) throw error
 	}, [error])
@@ -33,21 +27,32 @@ export default function RootLayout() {
 		if (loaded) SplashScreen.hideAsync()
 	}, [loaded])
 
-	if (!loaded) {
-		return <LoadingSpinner color='red' />
-	}
+	if (!loaded)
+		return <LoadingSpinner color="red" />
+
 
 	return <RootLayoutNav />
 }
 
 function RootLayoutNav() {
-	const colorScheme = useColorScheme()
+	const MyTheme = {
+		dark: false,
+		colors: {
+			primary: 'rgb(255, 45, 85)',
+			background: '#444',
+			card: '#333',
+			text: '#fff',
+			border: 'rgb(199, 199, 204)',
+			notification: 'rgb(255, 69, 58)'
+		}
+	}
 
 	return (
-		<ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+		<ThemeProvider value={MyTheme}>
 			<Stack>
-				<Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-				<Stack.Screen name='modal' options={{ presentation: 'modal' }} />
+				<Stack.Screen name="(tabs)" options={{ headerShown: false, title: 'Home' }} />
+				<Stack.Screen name="video/[id]" options={{ headerShown: false }} />
+				<Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Find video' }} />
 			</Stack>
 		</ThemeProvider>
 	)

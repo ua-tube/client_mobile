@@ -1,8 +1,9 @@
-import { Image, Pressable, Text, View } from 'react-native'
+import { Pressable, Text, View } from 'react-native'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import { useClientOnlyValue } from '@/hooks'
 import { Link, Tabs } from 'expo-router'
-import Colors from '@/constants/Colors'
+import { useAssets } from 'expo-asset'
+import { Image } from 'expo-image'
 import React from 'react'
 
 function TabBarIcon(props: {
@@ -13,15 +14,16 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
+	const [assets] = useAssets([require('@/assets/images/logo.png')])
 	return (
 		<Tabs
 			screenOptions={{
-				tabBarActiveTintColor: Colors['light'].tint,
+				tabBarActiveTintColor: '#fff',
 				headerShown: useClientOnlyValue(false, true)
 			}}
 		>
 			<Tabs.Screen
-				name='index'
+				name="index"
 				options={{
 					title: 'Головна',
 					headerLeft: () => (
@@ -34,31 +36,31 @@ export default function TabLayout() {
 								gap: 5
 							}}
 						>
-							<Image
+							{assets && <Image
 								style={{
 									width: 30,
 									height: 30
 								}}
-								source={require('@/assets/images/logo.png')}
-							/>
+								source={assets[0].uri}
+							/>}
 							<Text
 								style={{
-									color: Colors['light'].text,
+									color: '#fff',
 									fontWeight: 'bold',
 									fontSize: 20
 								}}
-								children='UaTube'
+								children="UaTube"
 							/>
 						</View>
 					),
 					headerRight: () => (
-						<Link href='/modal' asChild>
+						<Link href="/modal" asChild>
 							<Pressable>
 								{({ pressed }) => (
 									<FontAwesome
-										name='search'
+										name="search"
 										size={25}
-										color={Colors['light'].text}
+										color="#fff"
 										style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
 									/>
 								)}
@@ -66,14 +68,14 @@ export default function TabLayout() {
 						</Link>
 					),
 					headerTitle: '',
-					tabBarIcon: ({ color }) => <TabBarIcon name='home' color={color} />
+					tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />
 				}}
 			/>
 			<Tabs.Screen
-				name='user'
+				name="user"
 				options={{
 					title: 'Користувач',
-					tabBarIcon: ({ color }) => <TabBarIcon name='user' color={color} />
+					tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />
 				}}
 			/>
 		</Tabs>

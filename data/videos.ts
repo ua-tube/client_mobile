@@ -1,4 +1,4 @@
-import { qualities, defaultVideo } from '@/data/video'
+import { defaultChannel, defaultVideo, qualities } from './video'
 import { IVideo } from '@/interfaces'
 
 const videoEdits: IVideo[] = [
@@ -15,12 +15,7 @@ const videoEdits: IVideo[] = [
 		disLikesCount: 4,
 		limits: true,
 		thumbnailUrl: 'https://i.ytimg.com/vi/5txddNLV650/hqdefault.jpg',
-		channel: {
-			id: 'RA700M',
-			name: 'RA700M',
-			nickName: 'ra700m',
-			profileImg: 'https://i.pinimg.com/564x/16/4d/f5/164df5e3f7a4b8b1736c3381acd32a0a.jpg'
-		}
+		channel: defaultChannel
 	},
 	{
 		id: '6354c215a3c641a37ca7e4759da038ee',
@@ -35,12 +30,7 @@ const videoEdits: IVideo[] = [
 		limits: false,
 		description: defaultVideo.description,
 		thumbnailUrl: 'https://i3.ytimg.com/vi/cxjvTXo9WWM/maxresdefault.jpg',
-		channel: {
-			name: 'Sia',
-			id: 'Sia',
-			profileImg: 'https://i.pinimg.com/564x/16/4d/f5/6354c215a3c641a37ca7e4759da038ee.jpg',
-			nickName: 'sia'
-		}
+		channel: defaultChannel
 	},
 	{
 		id: 'f0e00bb2a86ff1cec67016b787634610',
@@ -55,12 +45,7 @@ const videoEdits: IVideo[] = [
 		limits: false,
 		description: defaultVideo.description,
 		thumbnailUrl: 'https://i3.ytimg.com/vi/TcMBFSGVi1c/maxresdefault.jpg',
-		channel: {
-			name: 'Marvel Entertainment',
-			id: 'Marvel Entertainment',
-			profileImg: 'https://i.pinimg.com/564x/16/4d/f5/164df5e3f7a4b8b1736c3381acd32a0a.jpg',
-			nickName: 'marvel'
-		}
+		channel: defaultChannel
 	},
 	{
 		id: '9e040a7a6ef9df150ae9b5e3edf9429d',
@@ -75,12 +60,7 @@ const videoEdits: IVideo[] = [
 		limits: false,
 		description: defaultVideo.description,
 		thumbnailUrl: 'https://i3.ytimg.com/vi/c8-eYB--j-Q/maxresdefault.jpg',
-		channel: {
-			name: 'constGenius',
-			id: 'constGenius',
-			profileImg: 'https://i.pinimg.com/564x/16/4d/f5/164df5e3f7a4b8b1736c3381acd32a0a.jpg',
-			nickName: 'constGenius'
-		}
+		channel:defaultChannel
 	},
 	{
 		id: '3f7f8b78d7089f21d07331edce7fd0eb',
@@ -95,13 +75,7 @@ const videoEdits: IVideo[] = [
 		limits: false,
 		description: defaultVideo.description,
 		thumbnailUrl: 'https://i3.ytimg.com/vi/UYSylqXW9vM/maxresdefault.jpg',
-		channel: {
-			id: 'constGenius',
-			name: 'constGenius',
-			nickName: 'constGenius',
-			profileImg:
-				'https://i.pinimg.com/564x/16/4d/f5/164df5e3f7a4b8b1736c3381acd32a0a.jpg'
-		}
+		channel: defaultChannel
 	},
 	{
 		id: 'c417f3030e21e55c9013f4591035b795',
@@ -116,13 +90,7 @@ const videoEdits: IVideo[] = [
 		limits: false,
 		description: defaultVideo.description,
 		thumbnailUrl: 'https://i3.ytimg.com/vi/PxZ5gGfPtCQ/maxresdefault.jpg',
-		channel: {
-			name: 'Netflix India',
-			id: 'Netflix India',
-			nickName: 'netflix_india',
-			profileImg:
-				'https://i.pinimg.com/564x/16/4d/f5/164df5e3f7a4b8b1736c3381acd32a0a.jpg'
-		}
+		channel: defaultChannel
 	},
 	{
 		id: '116281ab79cd0184d31c17b60e171bed',
@@ -137,13 +105,7 @@ const videoEdits: IVideo[] = [
 		limits: false,
 		description: defaultVideo.description,
 		thumbnailUrl: 'https://i3.ytimg.com/vi/z_MnNejwR8s/maxresdefault.jpg',
-		channel: {
-			name: 'constGenius',
-			id: 'constGenius',
-			nickName: 'constGenius',
-			profileImg:
-				'https://i.pinimg.com/564x/16/4d/f5/164df5e3f7a4b8b1736c3381acd32a0a.jpg'
-		}
+		channel: defaultChannel
 	},
 	{
 		id: 'f8007334bcecc56b8ccdfce585f8ac53',
@@ -158,12 +120,7 @@ const videoEdits: IVideo[] = [
 		limits: true,
 		description: defaultVideo.description,
 		thumbnailUrl: 'https://i.ytimg.com/vi/HoxrYzuxH_Q/maxresdefault.jpg',
-		channel: {
-			name: 'Molob',
-			id: 'molob',
-			nickName: 'molob',
-			profileImg: 'https://yt3.ggpht.com/vqRn33QWEAp2NGudzu_OPVLOEUK-qUkdYhLRyZ5cZQKqzrdMA1mDVclcMmhkmGF14hGT1EXkEQ=s68-c-k-c0x00ffffff-no-rj'
-		}
+		channel: defaultChannel
 	},
 	{
 		id: 'd6fe8454efd2c8253ead6ab79d34dddb',
@@ -178,12 +135,7 @@ const videoEdits: IVideo[] = [
 		limits: true,
 		description: defaultVideo.description,
 		thumbnailUrl: 'https://i3.ytimg.com/vi/p_0MaEUBMYg/maxresdefault.jpg',
-		channel: {
-			name: 'Ruri Ohama',
-			id: 'Ruri Ohama',
-			profileImg: 'https://i.pinimg.com/564x/16/4d/f5/164df5e3f7a4b8b1736c3381acd32a0a.jpg',
-			nickName: 'ruriOhama'
-		}
+		channel: defaultChannel
 	},
 	{
 		id: '361f18312f24eac5bf69f78189037d60',
@@ -198,12 +150,7 @@ const videoEdits: IVideo[] = [
 		limits: true,
 		description: defaultVideo.description,
 		thumbnailUrl: 'https://i3.ytimg.com/vi/mqqft2x_Aa4/maxresdefault.jpg',
-		channel: {
-			name: 'Warner Bros. Pictures',
-			id: 'Warner Bros. Pictures',
-			profileImg: 'https://i.pinimg.com/564x/16/4d/f5/164df5e3f7a4b8b1736c3381acd32a0a.jpg',
-			nickName: 'wwl'
-		}
+		channel: defaultChannel
 	}
 ]
 

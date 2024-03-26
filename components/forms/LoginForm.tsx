@@ -1,26 +1,23 @@
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { useAssets } from 'expo-asset'
+import { Image } from 'expo-image'
 import React from 'react'
-import {
-	View,
-	Text,
-	TextInput,
-	TouchableOpacity,
-	Image,
-	StyleSheet
-} from 'react-native'
+
 
 const LoginScreen: React.FC = () => {
+	const [assets] = useAssets([require('@/assets/images/logo.png')])
 	return (
 		<View style={styles.container}>
-			<Image source={require('@/assets/images/logo.png')} style={styles.logo} />
+			<Image source={assets?.[0]?.uri} style={styles.logo} />
 			<TextInput
 				style={styles.input}
-				placeholder='Введіть ваш email'
-				keyboardType='email-address'
-				autoCapitalize='none'
+				placeholder="Your email"
+				keyboardType="email-address"
+				autoCapitalize="none"
 			/>
 			<TextInput
 				style={styles.input}
-				placeholder='Введіть ваш пароль'
+				placeholder="Your password"
 				secureTextEntry
 			/>
 			<TouchableOpacity style={styles.button}>

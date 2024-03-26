@@ -5,7 +5,7 @@ interface IComment {
 	message: string
 	createdAt: string
 	likesCount: number
-	chanel: IChannel
+	channel: IChannel
 	children?: IComment []
 }
 
