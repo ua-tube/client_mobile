@@ -1,5 +1,5 @@
-import { Pressable, Text, View } from 'react-native'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
+import { Pressable, Text, View } from 'react-native'
 import { useClientOnlyValue } from '@/hooks'
 import { Link, Tabs } from 'expo-router'
 import { useAssets } from 'expo-asset'
@@ -25,7 +25,7 @@ export default function TabLayout() {
 			<Tabs.Screen
 				name="index"
 				options={{
-					title: 'Головна',
+					title: 'Home',
 					headerLeft: () => (
 						<View
 							style={{
@@ -54,7 +54,7 @@ export default function TabLayout() {
 						</View>
 					),
 					headerRight: () => (
-						<Link href="/modal" asChild>
+						<Link href="/search" asChild>
 							<Pressable>
 								{({ pressed }) => (
 									<FontAwesome
@@ -72,9 +72,16 @@ export default function TabLayout() {
 				}}
 			/>
 			<Tabs.Screen
+				name="subscriptions"
+				options={{
+					title: 'Subscriptions',
+					tabBarIcon: ({ color }) => <TabBarIcon name="align-justify" color={color} />
+				}}
+			/>
+			<Tabs.Screen
 				name="user"
 				options={{
-					title: 'Користувач',
+					title: 'Me',
 					tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />
 				}}
 			/>

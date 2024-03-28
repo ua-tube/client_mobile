@@ -30,7 +30,7 @@ const subscriptions: IChannel[] = [
 const playlists: IPlaylist[] = [
 	{
 		id: 'LL',
-		name: 'Відео, які сподобалися',
+		name: 'Liked videos',
 		imgUrl: videos?.[0].thumbnailUrl,
 		isPrivate: true,
 		channel: defaultChannel,
@@ -39,7 +39,7 @@ const playlists: IPlaylist[] = [
 	},
 	{
 		id: 'WL',
-		name: 'Переглянути пізніше',
+		name: 'View later',
 		imgUrl: videos?.[0].thumbnailUrl,
 		isPrivate: true,
 		channel: defaultChannel,

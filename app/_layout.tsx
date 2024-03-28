@@ -54,7 +54,7 @@ function RootLayoutNav() {
 				<Stack.Screen name="video/[id]" options={{ headerShown: false }} />
 				<Stack.Screen name="channel/[id]" options={{ headerShown: false }} />
 				<Stack.Screen name="playlist/[id]" options={{ headerShown: false }} />
-				<Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Sign in or sign up' }} />
+				<Stack.Screen name="search" options={{ presentation: 'modal', title: 'Search' }} />
 			</Stack>
 		</ThemeProvider>
 	)
