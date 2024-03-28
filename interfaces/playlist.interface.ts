@@ -1,11 +1,9 @@
-import dynamicIconImports from 'lucide-react/dynamicIconImports'
 import { IChannel, IVideo } from './'
 
 interface IPlaylist {
 	id: string,
 	name: string,
-	imgUrl?: string
-	icon?: keyof typeof dynamicIconImports
+	imgUrl?: string // first video thumbnail
 	channel?: IChannel
 	videos?: IVideo[]
 	viewsCount?:number

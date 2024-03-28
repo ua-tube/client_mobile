@@ -81,7 +81,7 @@ const VideoCommentsCard: React.FC<IVideoCommentsCardProps> = ({ comment, hasPare
 					/>
 				</Link>
 				<View style={styles.commentHeader}>
-					<Text style={styles.commentAuthor}>{comment.channel.name}</Text>
+					<Link href={`/channel/${comment.channel.id}`} style={styles.commentAuthor}>{comment.channel.name}</Link>
 					<Text style={styles.commentDate}>{formattedDate}</Text>
 				</View>
 			</View>

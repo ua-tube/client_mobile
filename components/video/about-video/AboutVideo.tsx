@@ -4,6 +4,7 @@ import React, { FC, useState } from 'react'
 import { IVideo } from '@/interfaces'
 import { Image } from 'expo-image'
 import { getVideoUrl } from '@/utils'
+import { Link, router } from 'expo-router'
 
 interface IAboutVideoProps {
 	video?: IVideo
@@ -37,7 +38,7 @@ const AboutVideo: FC<IAboutVideoProps> = ({ video }) => {
 	const onShareLink = async () => {
 		try {
 			await Share.share({
-				title:`Copy video link '${video?.title}'`,
+				title: `Copy video link '${video?.title}'`,
 				url: getVideoUrl(video?.id)
 			})
 		} catch (error) {
@@ -48,12 +49,16 @@ const AboutVideo: FC<IAboutVideoProps> = ({ video }) => {
 	return <View style={styles.videoInfoContainer}>
 		<Text style={styles.videoTitle}>{video?.title}</Text>
 		<View style={styles.channelInfo}>
-			<Image
-				source={{ uri: video?.channel.profileImg }}
-				style={styles.channelLogo}
-			/>
+			<TouchableOpacity
+				onPress={() => router.navigate(`/channel/${video?.channel.id}`)}
+			>
+				<Image
+					source={{ uri: video?.channel.profileImg }}
+					style={styles.channelLogo}
+				/>
+			</TouchableOpacity>
 			<View style={styles.channelDetails}>
-				<Text style={styles.channelName}>{video?.channel?.name}</Text>
+				<Link href={`/channel/${video?.channel.id}`} style={styles.channelName}>{video?.channel?.name}</Link>
 				<Text style={styles.subscriberCount}>
 					{(subscribed ? (video?.channel.subscribersCount || 0) + 1 : video?.channel.subscribersCount)?.toLocaleString()} subscribers
 				</Text>

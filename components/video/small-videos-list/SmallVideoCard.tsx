@@ -1,19 +1,19 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
-import { IVideo } from '@/interfaces'
 import { Link, router } from 'expo-router'
+import { IVideo } from '@/interfaces'
 import { Image } from 'expo-image'
 import React, { FC } from 'react'
 
-interface IRelatedVideoCardProps {
+interface ISmallVideoCardProps {
 	video: IVideo
 }
 
 
-const RelatedVideoCard: FC<IRelatedVideoCardProps> = ({ video }) => {
+const SmallVideoCard: FC<ISmallVideoCardProps> = ({ video }) => {
 
 	return (
 		<TouchableOpacity style={styles.container}>
-			<TouchableOpacity onPress={() => router.replace(`/video/${video.id}`)}>
+			<TouchableOpacity onPress={() => router.navigate(`/video/${video.id}`)}>
 				<Image
 					source={{ uri: video.thumbnailUrl }}
 					style={styles.thumbnail}
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
 	}
 })
 
-export default RelatedVideoCard
+export default SmallVideoCard
