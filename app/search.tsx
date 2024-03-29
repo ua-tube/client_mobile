@@ -1,10 +1,10 @@
-import { FlatList, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 import { IPlaylist, IVideo } from '@/interfaces'
 import { playlists, videos } from '@/data'
 import React, { useState } from 'react'
-import { Image } from 'expo-image'
 import { router } from 'expo-router'
+import { Image } from 'expo-image'
 
 type SearchItemType = IPlaylist | IVideo
 

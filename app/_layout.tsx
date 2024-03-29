@@ -8,10 +8,6 @@ import { useEffect } from 'react'
 
 export { ErrorBoundary } from 'expo-router'
 
-export const unstable_settings = {
-	// Ensure that reloading on `/modal` keeps a back button present.
-	initialRouteName: '(tabs)'
-}
 
 export default function RootLayout() {
 	const [loaded, error] = useFonts({
@@ -49,12 +45,13 @@ function RootLayoutNav() {
 
 	return (
 		<ThemeProvider value={MyTheme}>
-			<Stack>
+			<Stack initialRouteName="(tabs)">
 				<Stack.Screen name="(tabs)" options={{ headerShown: false, title: 'Home' }} />
 				<Stack.Screen name="video/[id]" options={{ headerShown: false }} />
 				<Stack.Screen name="channel/[id]" options={{ headerShown: false }} />
 				<Stack.Screen name="playlist/[id]" options={{ headerShown: false }} />
 				<Stack.Screen name="search" options={{ presentation: 'modal', title: 'Search' }} />
+				<Stack.Screen name="login" options={{ presentation: 'modal', title: 'Login' }} />
 			</Stack>
 		</ThemeProvider>
 	)

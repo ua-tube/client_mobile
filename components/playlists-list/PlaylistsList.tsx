@@ -6,7 +6,7 @@ import React from 'react'
 
 interface IPlaylistsListProps {
 	playlists: IPlaylist[]
-	title: string
+	title?: string
 }
 
 const PlaylistsList: React.FC<IPlaylistsListProps> = ({ playlists, title }) => {
