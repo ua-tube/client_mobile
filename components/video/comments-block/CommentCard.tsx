@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import React, { useMemo, useState } from 'react'
 import { formatDistanceToNow } from 'date-fns'
@@ -66,7 +66,11 @@ const VideoCommentsCard: React.FC<IVideoCommentsCardProps> = ({ comment, hasPare
 			likesCount: 0,
 			id: Math.random().toString()
 		}
-		setCommentState(p => ({ ...p, children: p.children ? [...p.children, newComment] : [newComment] }))
+		setCommentState(p => ({
+			...p,
+			showReplies: true,
+			children: p.children ? [...p.children, newComment] : [newComment]
+		}))
 	}
 
 	return (
@@ -136,11 +140,16 @@ const VideoCommentsCard: React.FC<IVideoCommentsCardProps> = ({ comment, hasPare
 				</TouchableOpacity>
 			</View>}
 
-			{commentState.showReplies && commentState.children && <View>
-				{commentState.children.map(child => (
-					<VideoCommentsCard key={child.id} comment={child} hasParent={true} />
-				))}
-			</View>}
+			{commentState.showReplies && commentState.children &&
+				<FlatList data={commentState.children}
+									renderItem={
+										({ item, index }) =>
+											<VideoCommentsCard
+												key={index}
+												comment={item}
+											/>
+									}
+				/>}
 
 		</View>
 	)

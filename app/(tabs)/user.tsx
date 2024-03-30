@@ -2,8 +2,8 @@ import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'rea
 import SmallVideosList from '@/components/video/small-videos-list'
 import { defaultChannel, playlists, videos } from '@/data'
 import PlaylistsList from '@/components/playlists-list'
-import React, { useState } from 'react'
 import { Link, router } from 'expo-router'
+import React, { useState } from 'react'
 
 const UserPage: React.FC = () => {
 	const [moreDesc, setMoreDesc] = useState(false)
@@ -67,14 +67,15 @@ const styles = StyleSheet.create({
 		margin: 20
 	},
 	logOutButt: {
-		padding: 20,
-		borderRadius: 20,
+		padding: 15,
+		borderRadius: 10,
 		backgroundColor: '#444',
 		alignItems: 'center',
 		margin: 20
 	},
 	logOutButtText: {
-		color: '#fff'
+		color: '#fff',
+		fontSize: 12
 	},
 	avatar: {
 		width: 100,

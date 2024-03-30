@@ -49,7 +49,7 @@ const playlists: IPlaylist[] = [
 	{
 		id: '1',
 		name: 'Video edits',
-		imgUrl: 'https://i.ytimg.com/vi/mKMSxrkorKI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCN3Y-A_W6-bwsd7zKlN01id-QhJw',
+		imgUrl: videoEdits?.[0]?.thumbnailUrl,
 		isPrivate: true,
 		channel: defaultChannel,
 		videos: videoEdits,
@@ -61,7 +61,7 @@ const playlists: IPlaylist[] = [
 	{
 		id: '2',
 		name: 'Music playlist',
-		imgUrl: 'https://i.ytimg.com/vi/7Gu_siNNy10/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAIcG-qNoBanTodeTVU6_T-X7xMhA',
+		imgUrl: musicVideos?.[0]?.thumbnailUrl,
 		videos: musicVideos,
 		viewsCount: 654,
 		videosCount: 54,

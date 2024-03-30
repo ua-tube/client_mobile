@@ -14,6 +14,7 @@ const VideosList: FC<IVideosListProps> = ({ videos, title }) => {
 			{title && <Text style={styles.title}>{title}</Text>}
 			<FlatList
 				data={videos}
+				nestedScrollEnabled
 				keyExtractor={item => item.id}
 				renderItem={({ item }) => <VideoCard key={item.id} video={item} />}
 				contentContainerStyle={styles.grid}

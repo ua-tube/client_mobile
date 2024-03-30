@@ -5,6 +5,7 @@ import { IVideo } from '@/interfaces'
 import { Image } from 'expo-image'
 import { getVideoUrl } from '@/utils'
 import { Link, router } from 'expo-router'
+import { PlaylistsModal, ReportVideoModal } from '@/components/modals'
 
 interface IAboutVideoProps {
 	video?: IVideo
@@ -84,11 +85,11 @@ const AboutVideo: FC<IAboutVideoProps> = ({ video }) => {
 					<FontAwesome name="share" style={styles.buttonText} />
 					<Text style={styles.descriptionButtonText}>Share</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button}>
+				<TouchableOpacity style={styles.button} onPress={() => setOpenedTypeModal('playlists')}>
 					<FontAwesome name="list" style={styles.buttonText} />
 					<Text style={styles.descriptionButtonText}>Save to playlist</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button}>
+				<TouchableOpacity style={styles.button} onPress={() => setOpenedTypeModal('report')}>
 					<FontAwesome name="flag" style={styles.buttonText} />
 					<Text style={styles.descriptionButtonText}>Report video</Text>
 				</TouchableOpacity>
@@ -103,6 +104,16 @@ const AboutVideo: FC<IAboutVideoProps> = ({ video }) => {
 				children={`${showDesc ? 'Hide' : 'Show'} description`}
 			/>
 		</TouchableOpacity>
+		<ReportVideoModal
+			onClose={() => setOpenedTypeModal(undefined)}
+			reportVideo={() => undefined}
+			visible={openedTypeModal === 'report'}
+		/>
+		<PlaylistsModal
+			video={video}
+			visible={openedTypeModal === 'playlists'}
+			onClose={() => setOpenedTypeModal(undefined)}
+		/>
 	</View>
 }
 

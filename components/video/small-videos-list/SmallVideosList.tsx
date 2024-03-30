@@ -13,6 +13,7 @@ const SmallVideosList: FC<ISimilarVideosProps> = ({ videos, title }) => {
 		<View style={styles.container}>
 			{title && <Text style={styles.title}>{title}</Text>}
 			<FlatList
+				nestedScrollEnabled
 				data={videos}
 				keyExtractor={item => item.id}
 				renderItem={({ item }) => <SmallVideoCard key={item.id} video={item} />}

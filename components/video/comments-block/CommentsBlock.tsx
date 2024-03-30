@@ -50,6 +50,7 @@ const CommentsBlock: React.FC<ICommentsBlockProps> = ({ comments }) => {
 				</TouchableOpacity>
 			</View>
 			<FlatList
+				nestedScrollEnabled
 				data={allComments.slice(0, showAllComments ? allComments.length : 3)}
 				keyExtractor={item => item.id}
 				style={{ flexDirection: 'column', gap: 20 }}

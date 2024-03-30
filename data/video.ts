@@ -1,4 +1,4 @@
-import { IComment, IVideo, IChannel } from '@/interfaces'
+import { IChannel, IComment, IVideo } from '@/interfaces'
 
 
 const qualities = ['144p', '240p', '360p', '480p', '720p', '1080p', '1440p', '2160p']
@@ -73,39 +73,39 @@ const defaultVideo: IVideo = {
 const defaultComments: IComment[] = [
 	{
 		id: '1',
-		message: 'Дуже цікаве відео! Дякую за те, що поділились.',
+		message: 'Very interesting video! Thank you for sharing.',
 		createdAt: '2024-02-03T22:49:00.000Z',
 		likesCount: 10,
 		channel: {
 			id: 'channel-1',
 			nickName: 'bodes',
-			name: 'Наука та Технології',
+			name: 'Science and Technology',
 			profileImg: 'https://yt3.ggpht.com/ytc/AIf8zZTx3AsZckgO7PrxzDER6nPqydPP_EsO6XIxoRWxHg=s48-c-k-c0x00ffffff-no-rj',
 			subscribersCount: 10000
 		},
 		children: [
 			{
 				id: '6789',
-				message: 'Дуже цікаве відео! Можна поділитися з друзями?',
+				message: 'Very interesting video! Can I share it with my friends?',
 				createdAt: '2024-02-03T22:49:00.000Z',
 				likesCount: 10,
 				channel: {
 					id: 'channel-1',
 					nickName: 'bodes',
-					name: 'Наука та Технології',
+					name: 'Science and Technology',
 					profileImg: 'https://yt3.ggpht.com/ytc/AIf8zZTx3AsZckgO7PrxzDER6nPqydPP_EsO6XIxoRWxHg=s48-c-k-c0x00ffffff-no-rj',
 					subscribersCount: 10000
 				},
 				children: [
 					{
 						id: '645',
-						message: 'Так',
+						message: 'Yes',
 						createdAt: '2024-02-03T22:49:00.000Z',
 						likesCount: 10,
 						channel: {
 							id: 'channel-1',
 							nickName: 'bodes',
-							name: 'Наука та Технології',
+							name: 'Science and Technology',
 							profileImg: 'https://yt3.ggpht.com/ytc/AIf8zZTx3AsZckgO7PrxzDER6nPqydPP_EsO6XIxoRWxHg=s48-c-k-c0x00ffffff-no-rj',
 							subscribersCount: 10000
 						}
@@ -114,13 +114,13 @@ const defaultComments: IComment[] = [
 			},
 			{
 				id: '456',
-				message: 'Дуже цікаве відео!',
+				message: 'Very interesting video!',
 				createdAt: '2024-02-03T22:49:00.000Z',
 				likesCount: 10,
 				channel: {
 					id: 'channel-1',
 					nickName: 'bodes',
-					name: 'Наука та Технології',
+					name: 'Science and Technology',
 					profileImg: 'https://yt3.ggpht.com/ytc/AIf8zZTx3AsZckgO7PrxzDER6nPqydPP_EsO6XIxoRWxHg=s48-c-k-c0x00ffffff-no-rj',
 					subscribersCount: 10000
 				},
@@ -130,57 +130,58 @@ const defaultComments: IComment[] = [
 	},
 	{
 		id: '2',
-		message: 'Чудовий канал! Завжди знаходжу тут багато корисної інформації.',
+		message: 'Great channel! I always find a lot of useful information here.',
 		createdAt: '2024-02-03T22:50:00.000Z',
 		likesCount: 5,
 		channel: {
 			id: 'channel-2',
 			nickName: 'channel-2',
-			name: 'Кулінарія',
+			name: 'Cooking',
 			profileImg: 'https://yt3.ggpht.com/bM56yGtmL91Ks0iQoKtuVxDGXBxqlOcJFXbNgAGieneif3kVGefYulz4gr3RBN-5XMvfHUDP3Q=s48-c-k-c0x00ffffff-no-rj',
 			subscribersCount: 5000
 		}
 	},
 	{
 		id: '3',
-		message: 'Не згоден з автором відео. На мою думку, він помиляється.',
+		message: 'I disagree with the video author. In my opinion, he is mistaken.',
 		createdAt: '2024-02-03T22:51:00.000Z',
 		likesCount: 2,
 		channel: {
 			id: 'channel-3',
 			nickName: 'channel-3',
-			name: 'Подорожі',
+			name: 'Travel',
 			profileImg: 'https://yt3.ggpht.com/uuuDF5kog8igvdBOJcXjfTD2F059JI19ItkriqAlayoc3RRIUswwYPHZGWHJqZvanRaBa9bS8w=s48-c-k-c0x00ffffff-no-rj',
 			subscribersCount: 2000
 		}
 	},
 	{
 		id: '4',
-		message: 'Дуже емоційне відео. Не очікував такого.',
+		message: 'Very emotional video. Did not expect that.',
 		createdAt: '2024-02-03T22:52:00.000Z',
 		likesCount: 3,
 		channel: {
 			id: 'channel-4',
 			nickName: 'channel-3',
-			name: 'Музика',
+			name: 'Music',
 			profileImg: 'https://yt3.ggpht.com/CodCq1P96PEMlEOz3VigJnJy3Jsq8JUoDOKEhrmC6WN0W-yUNgymV5mrXG-iKFRmm6JgYB02GA=s48-c-k-c0x00ffffff-no-rj',
 			subscribersCount: 3000
 		}
 	},
 	{
 		id: '5',
-		message: 'Супер! ',
+		message: 'Great!',
 		createdAt: '2024-02-03T22:53:00.000Z',
 		likesCount: 4,
 		channel: {
 			id: 'channel-5',
 			nickName: 'channel-3',
-			name: 'Спорт',
+			name: 'Sports',
 			profileImg: 'https://yt3.ggpht.com/r5xAvOWzSZOExIfJ4J7pd7rQC_TC8M2kGu_TDZAPQiUtUkT3K08CXPN1mVqk3EP28TGp0G3W=s48-c-k-c0x00ffffff-no-rj',
 			subscribersCount: 4000
 		}
 	}
 ]
+
 
 const defaultChannel: IChannel = {
 	id: '1',
@@ -201,6 +202,4 @@ const defaultChannel: IChannel = {
 }
 
 
-
-
-export {  defaultVideo, defaultComments, defaultChannel, qualities }
+export { defaultVideo, defaultComments, defaultChannel, qualities }
